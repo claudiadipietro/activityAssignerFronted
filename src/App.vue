@@ -22,4 +22,7 @@ export default {
   color: #512c8d;
   margin-top: 60px;
 }
+body{
+  background-color: rgb(220, 210, 222);
+}
 </style>
