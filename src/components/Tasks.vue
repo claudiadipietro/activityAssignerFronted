@@ -15,11 +15,13 @@
   <div class="taskDiv" v-for="task in tasks" v-bind:key="task._id">
     <p v-if="!isEditing" :class="task.taskStatus?'tasksSorted':null">{{task.item}}</p>
     <input class ="editInput" type="text" v-if="isEditing" v-model="itemToUpdate">
-    <button class="deleteButton" v-if="!isEditing" v-on:click="deleteTask(task._id)">Delete</button>
+    <button class="deleteButton" v-if="!isEditing" v-on:click="deleteTask(task._id)">
+      Delete
+    </button>
     <button class="editButton" v-on:click="editTask">Edit</button>
     <button class="editButton" v-if="isEditing" v-on:click="updateTask(task._id)">Update</button>
   </div>
-  <button class="bigButton" v-if="this.tasks?.length > 0" v-on:click="sortTasks">Sort your tasks!</button>
+  <button class="bigButton" v-if="tasks?.length > 0" v-on:click="sortTasks">Sort your tasks!</button>
 </template>
 
 <script>
